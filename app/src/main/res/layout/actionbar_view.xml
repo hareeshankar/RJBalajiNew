@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="40dp"
+        android:layout_height="33dp"
+        android:paddingLeft="10dp"
+android:clickable="true"        android:src="@drawable/back2"
+        android:visibility="visible" />
+ 
+    <com.control.MyTextViewRegular
+        android:id="@+id/tvTitle" android:layout_marginLeft="10dp"
+        style="@style/normalTvStyle"
+        android:layout_width="match_parent"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="Title"
+android:layout_toRightOf="@+id/iv_back"
+        android:textSize="@dimen/title_text_size"
+        android:visibility="visible" />
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/shareImg" -->
+    <!-- android:layout_width="30dp" -->
+    <!-- android:layout_height="33dp" -->
+    <!-- android:layout_centerVertical="true" -->
+    <!-- android:layout_margin="5dp" -->
+    <!-- android:layout_toLeftOf="@+id/moreImg" -->
+    <!-- android:background="@drawable/share_bg" -->
+    <!-- android:onClick="onShareBtnClick" -->
+    <!-- android:visibility="visible" /> -->
+
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/moreImg" -->
+    <!-- android:layout_width="25dp" -->
+    <!-- android:layout_height="40dp" -->
+    <!-- android:layout_alignParentRight="true" -->
+    <!-- android:layout_centerVertical="true" -->
+    <!-- android:layout_marginLeft="20dp" -->
+    <!-- android:layout_marginRight="20dp" -->
+    <!-- android:background="@drawable/more_bg" -->
+    <!-- android:onClick="onMoreBtnClick" -->
+    <!-- android:padding="3dp" /> -->
+
+</RelativeLayout>

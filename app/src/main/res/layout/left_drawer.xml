@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawerItems"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:background="@drawable/bg1"
+    android:orientation="vertical" >
+
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="0dp" android:clickable="true" -->
+    <!-- android:layout_gravity="center_vertical" -->
+    <!-- android:layout_weight="0.3" -->
+    <!-- android:background="@colo" -->
+    <!-- android:orientation="horizontal" -->
+    <!-- android:padding="2dp" > -->
+
+
+    <!-- <ImageView -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:layout_gravity="center_vertical" -->
+    <!-- android:adjustViewBounds="true" -->
+    <!-- android:background="@color/dark_gray" -->
+    <!-- android:baselineAlignBottom="true" -->
+    <!-- android:cropToPadding="true" -->
+    <!-- android:padding="1dp" -->
+    <!-- android:scaleType="fitXY" -->
+    <!-- android:src="@drawable/very_wow" /> -->
+
+
+    <!-- </LinearLayout> -->
+
+    <ListView
+        android:id="@+id/left_drawer"
+        style="@style/listViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:cacheColorHint="#00000000"
+        android:divider="@color/golden_text_color"
+        android:dividerHeight="0.3dp" />
+
+</LinearLayout>

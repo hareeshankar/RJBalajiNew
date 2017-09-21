@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="h.thunderbird.phoenix.rjbalaji"
+    android:installLocation="auto"
+    android:versionCode="5"
+    android:versionName="1.2.3" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <permission
+        android:name="h.thunderbird.phoenix.rjbalaji.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="h.thunderbird.phoenix.rjbalaji.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.rjbalaji.ScreenSplash"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rjbalaji.MainScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver
+            android:name="com.app.App42GCMReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <!-- Your package name here -->
+                <category android:name="h.thunderbird.phoenix.rjbalaji" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.rjbalaji.player.PlayerService"
+            android:enabled="true"
+            android:exported="false" />
+        <service android:name="com.app.App42GCMService" >
+            <meta-data
+                android:name="onMessageOpen"
+                android:value="com.pokkt.pocketmoney.MessageActivity" />
+        </service>
+
+        <activity
+            android:name="com.rjbalaji.NotificationActivity"
+            android:noHistory="true"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+
+        <!-- adstart -->
+        <!-- <activity -->
+        <!-- android:name="com.startapp.android.eula.EULAActivity" -->
+        <!-- android:configChanges="keyboard|keyboardHidden|orientation" -->
+        <!-- android:theme="@android:style/Theme.Translucent" /> -->
+        <!-- <activity -->
+        <!-- android:name="com.startapp.android.publish.list3d.List3DActivity" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:taskAffinity="com.cityguide.AppWall" -->
+        <!-- android:theme="@android:style/Theme" /> -->
+        <!-- <activity -->
+        <!-- android:name="com.startapp.android.publish.AppWallActivity" -->
+        <!-- android:configChanges="orientation|keyboardHidden" -->
+        <!-- android:screenOrientation="portrait" -->
+        <!-- android:taskAffinity="com.cityguide.AppWall" -->
+        <!-- android:theme="@android:style/Theme.Translucent" /> -->
+
+    </application>
+
+    <!-- <uses-permission android:name="com.android.vending.BILLING" /> -->
+
+</manifest>
